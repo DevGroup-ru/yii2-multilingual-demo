@@ -3,7 +3,8 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-use DevGroup\Multilingual\widgets\ConfirmationLanguage;
+use DevGroup\Multilingual\widgets\CityConfirmation;
+use DevGroup\Multilingual\widgets\LanguageConfirmation;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
@@ -170,7 +171,8 @@ AppAsset::register($this);
 <?= dosamigos\disqus\CommentsCount::widget([
     'shortname' => 'yii2-multilingual-demo',
 ])?>
-<?= ConfirmationLanguage::widget(); ?>
+<?= LanguageConfirmation::widget(); ?>
+<?= CityConfirmation::widget(); ?>
 <?php $this->endBody() ?>
 </body>
 </html>

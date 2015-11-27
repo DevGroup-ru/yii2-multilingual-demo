@@ -5,7 +5,7 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log','multilingual'],
+    'bootstrap' => ['log', 'multilingual'],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -57,13 +57,9 @@ $config = [
             'default_language_id' => 1,
             'handlers' => [
                 [
-                    'class' => \DevGroup\Multilingual\DefaultGeoProvider::className(),
-                    'default' => [
-                        'country' => [
-                            'name' => 'England',
-                            'iso' => 'en',
-                        ],
-                    ],
+                    'class' => DevGroup\Multilingual\SypexGeoDaemon\Provider::className(),
+                    'host' => 'api.sypexgeo.net',
+                    'port' => 80,
                 ],
             ],
         ],
@@ -88,8 +84,8 @@ $config = [
         ],
     ],
     'modules' => [
-        'dynagrid'=> [
-            'class'=>'\kartik\dynagrid\Module',
+        'dynagrid' => [
+            'class' => '\kartik\dynagrid\Module',
             'dynaGridOptions' => [
                 'gridOptions' => [
                     'export' => false,
@@ -97,8 +93,8 @@ $config = [
             ]
             // other module settings
         ],
-        'gridview'=> [
-            'class'=>'\kartik\grid\Module',
+        'gridview' => [
+            'class' => '\kartik\grid\Module',
             // other module settings
 
         ],
