@@ -2,9 +2,9 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2_multilingual',
+    'dsn' => 'mysql:host=localhost;dbname=multilingual.dev',
     'username' => 'root',
-    'password' => 'password',
+    'password' => '7896321',
     'charset' => 'utf8',
     'enableSchemaCache' => true,
     'schemaCacheDuration' => 86400,

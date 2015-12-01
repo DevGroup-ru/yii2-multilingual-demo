@@ -14,13 +14,19 @@ return [
     ],
     'components' => [
         'db' => [
-            'dsn' => 'mysql:host=localhost;dbname=yii2_basic_tests',
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=localhost;dbname=multilingual.dev',
+            'username' => 'root',
+            'password' => '7896321',
+            'charset' => 'utf8',
+            'enableSchemaCache' => true,
+            'schemaCacheDuration' => 86400,
         ],
         'mailer' => [
             'useFileTransport' => true,
         ],
         'urlManager' => [
-            'showScriptName' => true,
+            'showScriptName' => false,
         ],
     ],
 ];

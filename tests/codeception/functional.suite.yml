@@ -10,7 +10,9 @@ class_name: FunctionalTester
 modules:
     enabled:
       - Filesystem
-      - Yii2
+      - PhpBrowser
     config:
         Yii2:
             configFile: 'codeception/config/functional.php'
+        PhpBrowser:
+            url: 'http://multilingual.dev'

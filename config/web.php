@@ -57,9 +57,13 @@ $config = [
             'default_language_id' => 1,
             'handlers' => [
                 [
-                    'class' => DevGroup\Multilingual\SypexGeoDaemon\Provider::className(),
-                    'host' => 'api.sypexgeo.net',
-                    'port' => 80,
+                    'class' => \DevGroup\Multilingual\DefaultGeoProvider::className(),
+                    'default' => [
+                        'country' => [
+                            'name' => 'England',
+                            'iso' => 'en',
+                        ],
+                    ],
                 ],
             ],
         ],
