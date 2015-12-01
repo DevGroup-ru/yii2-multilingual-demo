@@ -105,6 +105,10 @@ AppAsset::register($this);
             <?= $content ?>
         </div>
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+
+            <?= LanguageConfirmation::widget(); ?>
+            <?= CityConfirmation::widget(); ?>
+
             <div class="sidebar-module sidebar-module-inset">
                 <h4>
                     <i class="fa fa-question-circle"></i>
@@ -171,8 +175,7 @@ AppAsset::register($this);
 <?= dosamigos\disqus\CommentsCount::widget([
     'shortname' => 'yii2-multilingual-demo',
 ])?>
-<?= LanguageConfirmation::widget(); ?>
-<?= CityConfirmation::widget(); ?>
+
 <?php $this->endBody() ?>
 </body>
 </html>

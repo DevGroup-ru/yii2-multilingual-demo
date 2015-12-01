@@ -7,6 +7,11 @@ use yii\codeception\BasePage;
 
 $I = new FunctionalTester($scenario);
 $I->wantTo('ensure that about works');
-$I->amOnPage('http://multilingual.dev/ru/');
+$I->setHeader('Host', 'multilingual.dev');
+
+$I->amOnPage('/ru/');
+//\Codeception\Util\Debug::debug($I->grabTextFrom('body')); exit(33);
 //AboutPage::openBy($I, ['post/index']);
-$I->see('Пример многоязычного поста', 'a');
+$I->seeResponseCodeIs(200);
+
+//$I->see('Пример многоязычного поста', 'a');
