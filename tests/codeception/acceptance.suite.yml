@@ -22,7 +22,8 @@ modules:
 # PLEASE ADJUST IT TO THE ACTUAL ENTRY POINT WITHOUT PATH INFO
             url: 'http://multilingual.dev'
             browser: firefox
-            restart: true
+#            window_size: 1024x768
+            restart: false
             clear_cookies: true
 #        WebDriver:
 #            url: http://localhost:8080

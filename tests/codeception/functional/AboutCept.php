@@ -7,7 +7,8 @@ use yii\codeception\BasePage;
 
 $I = new FunctionalTester($scenario);
 $I->wantTo('ensure that about works');
-$I->setHeader('Host', 'multilingual.dev');
+$I->setServerData('multilingual.dev', '192.162.57.3');
+//$I->setHeader('Host', 'multilingual.dev');
 
 $I->amOnPage('/ru/');
 //\Codeception\Util\Debug::debug($I->grabTextFrom('body')); exit(33);
