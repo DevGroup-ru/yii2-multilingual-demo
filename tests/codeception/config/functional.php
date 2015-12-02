@@ -5,7 +5,7 @@ $_SERVER['SCRIPT_NAME'] = YII_TEST_ENTRY_URL;
 /**
  * Application configuration for functional tests
  */
-return yii\helpers\ArrayHelper::merge(
+$config = yii\helpers\ArrayHelper::merge(
     require(__DIR__ . '/../../../config/web.php'),
     require(__DIR__ . '/config.php'),
     [
@@ -20,6 +20,29 @@ return yii\helpers\ArrayHelper::merge(
                 ],
                 */
             ],
+            'urlManager' => [
+                'showScriptName' => false,
+            ],
+            'multilingual' => [
+
+            ]
         ],
     ]
 );
+
+$config['components']['multilingual']['handlers'] = [
+    0 => [
+        'country' => [
+            'name' => 'England',
+            'iso' => 'en',
+        ],
+        'city' => [
+            'name' => 'Tambov',
+            'iso' => null,
+            'lat' => 52.73169,
+            'lon' => 41.44326,
+        ]
+
+    ]
+];
+return $config;

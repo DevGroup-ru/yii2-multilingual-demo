@@ -10,7 +10,8 @@ class_name: FunctionalTester
 modules:
     enabled:
       - Filesystem
-      - PhpBrowser
+      - Yii2
+      - Codeception\Module\FunctionalHelper
     config:
         Yii2:
             configFile: 'codeception/config/functional.php'
