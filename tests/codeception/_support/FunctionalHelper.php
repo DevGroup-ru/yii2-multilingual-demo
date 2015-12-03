@@ -4,9 +4,8 @@ namespace Codeception\Module;
 // here you can define custom actions
 // all public methods declared in helper class will be available in $I
 
-use DevGroup\Multilingual\Multilingual;
+
 use yii\base\Application;
-use yii\di\ServiceLocator;
 
 class FunctionalHelper extends \Codeception\Module
 {
@@ -21,17 +20,14 @@ class FunctionalHelper extends \Codeception\Module
         $module->client->setServerParameter('SERVER_NAME', $sererName);
         $module->client->setServerParameter('HTTP_HOST', $sererName);
         $module->client->setServerParameter('HTTP_CLIENT_IP', $ip);
-        $_SERVER['HTTP_CLIENT_IP'] = $ip;
-
+        $module->client->setServerParameter('REMOTE_ADDR', $ip);
     }
 
-    public function setGeoProvider($config = [])
+    public function setMultilingualHandlers($data = [])
     {
         /** @var Yii2 $module */
         $module = $this->getModule('Yii2');
-        $module->app->multilingual->handlers = $config;
-        $module->app->multilingual->retrieveInfo();
-
+        $module->client->setServerParameter('multilingual_handlers', $data);
     }
 
 

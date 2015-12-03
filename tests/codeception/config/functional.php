@@ -30,19 +30,13 @@ $config = yii\helpers\ArrayHelper::merge(
     ]
 );
 
-$config['components']['multilingual']['handlers'] = [
-    0 => [
-        'country' => [
-            'name' => 'England',
-            'iso' => 'en',
-        ],
-        'city' => [
-            'name' => 'Tambov',
-            'iso' => null,
-            'lat' => 52.73169,
-            'lon' => 41.44326,
-        ]
-
-    ]
+$config['components']['cache'] = [
+    'class' => 'yii\caching\DummyCache',
+    'as lazy' => [
+        'class' => 'DevGroup\TagDependencyHelper\LazyCache',
+    ],
 ];
+if (isset($_SERVER['multilingual_handlers'])) {
+    $config['components']['multilingual']['handlers'] = $_SERVER['multilingual_handlers'];
+}
 return $config;
