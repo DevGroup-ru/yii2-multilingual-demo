@@ -11,6 +11,7 @@ return [
         'domain' => 'demo.yii2-multilingual.dev',
         'folder' => 'en',
         'yii_language' => 'en-US',
+        'context_id' => '1',
     ],
     2 => [
         'id' => 2,
@@ -22,5 +23,6 @@ return [
         'domain' => 'demo.yii2-multilingual.dev',
         'folder' => 'ru',
         'yii_language' => 'ru',
+        'context_id' => '1',
     ],
 ];

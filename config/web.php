@@ -54,7 +54,6 @@ $config = [
         ],
         'multilingual' => [
             'class' => \DevGroup\Multilingual\Multilingual::className(),
-            'default_language_id' => 1,
             'handlers' => [
                 [
                     'class' => \DevGroup\Multilingual\DefaultGeoProvider::className(),
